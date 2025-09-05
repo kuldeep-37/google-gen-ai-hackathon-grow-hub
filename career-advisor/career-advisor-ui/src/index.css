@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens - colors, shadows, fonts */
+:root {
+  --primary: 220 90% 56%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 15% 95%;
+  --secondary-foreground: 220 25% 20%;
+  --accent: 142 70% 45%;
+  --accent-foreground: 0 0% 98%;
+  --muted: 220 15% 95%;
+  --muted-foreground: 220 15% 45%;
+  --border: 220 15% 88%;
+  --input: 220 15% 92%;
+  --radius: 0.75rem;
+  --shadow-professional: 0 10px 30px -5px hsl(220 90% 56% / 0.2);
+}
+
+body {
+  @apply bg-[hsl(var(--muted))] font-body text-[hsl(var(--primary-foreground))];
+  min-height: 100vh;
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-semibold;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary text-primary-foreground rounded-lg py-3 px-6 font-semibold shadow-professional transition duration-300;
+}
+.btn-primary:hover {
+  background-color: hsl(var(--primary-foreground));
+  color: hsl(var(--primary));
+}
+
+/* Navigation grid */
+.nav-menu-grid {
+  @apply grid grid-cols-2 gap-4 max-w-md mx-auto;
+}
+.nav-menu-grid button {
+  @apply btn-primary w-full;
+}
+
+/* Tier badges */
+.tier-bronze {
+  background-color: hsl(25 75% 47%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 6px 16px;
+  font-weight: bold;
+}
+.tier-silver {
+  background-color: hsl(0 0% 75%);
+  color: #333;
+  border-radius: 12px;
+  padding: 6px 16px;
+  font-weight: bold;
+}
+.tier-gold {
+  background-color: hsl(45 100% 51%);
+  color: #222;
+  border-radius: 12px;
+  padding: 6px 16px;
+  font-weight: bold;
+}
+
+/* Card shadows */
+.card {
+  border-radius: var(--radius);
+  background-color: var(--primary-foreground);
+  color: var(--secondary-foreground);
+  padding: 2rem;
+  box-shadow: var(--shadow-professional);
+}
